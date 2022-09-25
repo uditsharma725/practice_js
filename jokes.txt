@@ -1,0 +1,40 @@
+`What kind of dog does a magician have?
+A Labracadabrador!`,
+`What do you call an elephant that doesn’t matter?
+An irrelephant!`,
+`What do you get when you cross a rabbit with shellfish?
+An oyster bunny!`,
+`Where do polar bears keep their money?
+In a snow bank!`,
+`Why did the pony get sent to his room?
+He wouldn’t stop horsing around!`,
+`Where do cows go on Friday nights?
+They go to the moo-vies!`,
+`Why couldn't the pony sing “Happy Birthday?”
+Because she was just a little hoarse!`,
+`How do you make an octopus laugh?
+With ten-tickles!`,
+`How do you keep a bull from charging?
+Take away its credit card!`,
+`Why can’t a leopard hide?
+Because he’s always spotted!`,
+`What do you get when you cross a snail with a porcupine?
+A slowpoke!`,
+`What do frogs order at fast-food restaurants?
+French flies!`,
+`What do you get from a pampered cow?
+Spoiled milk!`,
+`What do you call an alligator who solves mysteries?
+An investigator!`,
+`Why is a snake difficult to fool?
+You can’t pull its leg!`,
+`What kind of socks do grizzlies wear?
+None, they have bear feet!`,
+`What did the dog say when it sat on sandpaper?
+"Ruff!"`,
+`What's a cat's favorite dessert?
+Chocolate mouse!`,
+`What fish only swims at night?
+Starfish!`,
+`What does a triceratops sit on?
+Its tricera-bottom!`
