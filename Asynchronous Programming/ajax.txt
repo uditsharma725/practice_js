@@ -1,0 +1,6 @@
+AJAX---> Asynchronous Javascript in XML
+!ajax is not a programming language, it is a set of technologies
+no page reload/refresh
+Modern websites use JSON instead of XML
+
+Ajax uses XMLHttpRequest object(xhr object)
