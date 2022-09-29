@@ -62,7 +62,7 @@ function popHandler() {
             }
             list.innerHTML = str;
         }
-        else console.log("some error occured");
+        else console.log(`some error occured`);
     }
     //send request:
     xhr.send();        
