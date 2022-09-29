@@ -57,6 +57,9 @@ function popHandler() {
             console.log(obj);
             let list = document.querySelector("#list");
             let str = "";
+            for(key in obj){
+                str += `<li>${object[key]}</li>`
+            }
             list.innerHTML = str;
         }
         else console.log("some error occured");
