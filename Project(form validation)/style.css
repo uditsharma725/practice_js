@@ -1,0 +1,13 @@
+.buttons {
+    display: flex;
+    justify-content: space-between;
+}
+.info_display ul {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    align-items: center;
+}
+.info_display  ul li {
+    list-style-type: none;
+}
