@@ -15,7 +15,8 @@
     <body>
         <div class="container info_submit">
             <div class="heading" style="text-align: center;">
-                <h1 class="my-3">Fill Form <span class="badge text-bg-secondary"><i>Dan Travel Desk</i></span></h1>
+                <h1 class="my-3" style="font-size: 40px"><span class="badge text-bg-secondary"><i>Dan Travel Desk</i></span></h1>
+                <h1 class="my-3">Fill Form</h1>
             </div>
             <div class="successmessage"></div>
             <div class="mb-3">
@@ -34,12 +35,12 @@
                     placeholder="squarepants123@gmail.com">
                 <small class="form-text text-muted invalid-feedback">
                     <span style="color: red;">
-                        <ul id="list"></ul>
+                        <ul id="list_email"></ul>
                     </span>
                 </small>
             </div>
             <label class="form-label">Select a car</label>
-            <select class="form-select car" aria-label="Default select example" style="margin-bottom: 25px;">
+            <select class="form-select car" style="margin-bottom: 25px;">
                 <option value="maruti 800">Maruti 800</option>
                 <option value="jeep">Jeep</option>
                 <option value="Thar">Thar</option>
@@ -48,29 +49,17 @@
                 <option value="swift">Swift Desire</option>
             </select>
             <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Address</label>
-                <textarea class="form-control address" id="exampleFormControlTextarea1" rows="2"></textarea>
-            </div>
-            <div class="mb-3">
                 <label class="form-label">Phone Number</label>
-                <input type="number" class="form-control number" placeholder="0987654321">
-                <small class="form-text text-muted invalid-feedback"></small>
+                <input type="tel" class="form-control number" placeholder="0987654321">
+                <small class="form-text text-muted invalid-feedback">
+                    <span style="color: red;">
+                        <ul id="list_phone"></ul>
+                    </span>
+                </small>
             </div>
-            <!-- <div class="mb-3">
-                <label for="exampleFormControlTextarea1" class="form-label">Any other message</label>
-                <textarea class="form-control message" id="exampleFormControlTextarea1" rows="3"></textarea>
-            </div> -->
             <div class="buttons">
                 <button class="btn btn-primary submit" style="margin-bottom:25px">Submit</button>
-                <button class="btn btn-primary details" style="margin-bottom:25px">Details</button>
             </div>
-        </div>
-
-        <div class="container info_display">
-            <div class="heading" style="text-align: center;">
-                <h1 class="my-3">Submitions <span class="badge text-bg-secondary"><i>Dan Travel Desk</i></span></h1>
-            </div>
-            <div class="info_display"></div>
         </div>
 
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
