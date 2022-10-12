@@ -1,0 +1,48 @@
+<DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Alarm CLock</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
+            integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+        <script src="app.js" defer></script>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+        <div class="box element">
+            <div class="container">
+                <div class="message" style="font-size: 20px;">Alarm : none</div>
+                <span id="hours">00</span>
+                <span id="hours"> : </span>
+                <span id="minutes">00</span>
+                <span id="minutes"> : </span>
+                <span id="seconds">00</span>
+            </div>
+            <div class="container">
+                <button class="btn btn-light alarm">Set Alarm</button>
+            </div>
+            <div class="setAlarm">
+                <p style="margin-top: 21px;">Clock follows 24hrs format</p>
+                <input type="number" class="form-control" id="alarmHours" placeholder="hours" style="color: #222;">
+                <input type="number" class="form-control" id="alarmMinutes" placeholder="minutes" style="color: #222;">
+                <input type="number" class="form-control" id="alarmSeconds" placeholder="seconds" style="color: #222;">
+                <button class="btn btn-light" id="setBtn">set</button>
+            </div>
+        </div>
+    </body>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.min.js"
+        integrity="sha384-7VPbUDkoPSGFnVtYi0QogXtr74QeVeeIs99Qfg5YCF+TidwNdjvaKZX19NZ/e6oz"
+        crossorigin="anonymous"></script>
+
+    </html>
