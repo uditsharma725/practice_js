@@ -13,9 +13,15 @@
     </head>
 
     <body>
+        
+        <audio id="alarmAudio">
+            <source src="alarm.mp3">
+        </audio>
+
         <div class="box element">
             <div class="container">
-                <div class="message" style="font-size: 20px;">Alarm : none</div>
+                <div class="warningMessage" style="font-size: 17px;"></div>
+                <div class="alarmMessage" style="font-size: 20px;"></div>
                 <span id="hours">00</span>
                 <span id="hours"> : </span>
                 <span id="minutes">00</span>
@@ -24,12 +30,12 @@
             </div>
             <div class="container">
                 <button class="btn btn-light alarm">Set Alarm</button>
+                <button class="btn btn-light turnOff">Turn off</button>
             </div>
             <div class="setAlarm">
                 <p style="margin-top: 21px;">Clock follows 24hrs format</p>
                 <input type="number" class="form-control" id="alarmHours" placeholder="hours" style="color: #222;">
                 <input type="number" class="form-control" id="alarmMinutes" placeholder="minutes" style="color: #222;">
-                <input type="number" class="form-control" id="alarmSeconds" placeholder="seconds" style="color: #222;">
                 <button class="btn btn-light" id="setBtn">set</button>
             </div>
         </div>

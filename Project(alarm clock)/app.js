@@ -1,5 +1,6 @@
 console.log("Alarm clock");
 
+let hours, minutes, seconds;
 setInterval(()=> {
     let date = new Date();
 
@@ -17,61 +18,98 @@ setInterval(()=> {
 }, 1000);
 
 
-document.querySelector('.setAlarm').style.display = "none";
-document.querySelector('.alarm').addEventListener('click', ()=> document.querySelector('.setAlarm').style.display = "inline");
 
-let checkHours = false;
+let checkHours;
 let alarmHours = document.querySelector('#alarmHours');
 alarmHours.addEventListener('blur', ()=> {
     let regex = /^([0-9]){0,2}$/;
-    if(regex.test(alarmHours.value) && alarmHours.value<24) {
+    if(alarmHours.value == "00"){
+        alarmHours.classList.remove('is-invalid');
+        alarmHours.classList.add('is-valid');
+        checkHours = true;
+    }
+    else if((regex.test(alarmHours.value) && alarmHours.value<24) && alarmHours.value != "") {
         alarmHours.classList.remove('is-invalid');
         alarmHours.classList.add('is-valid');
         checkHours = true;
     }
     else {
+        checkHours = false;
         alarmHours.classList.add('is-invalid');
-        setTimeout(()=> alarmHours.classList.remove('is-invalid'),3000);
     }
 });
 
-let checkMinutes = false;
+let checkMinutes;
 let alarmMinutes = document.querySelector('#alarmMinutes');
 alarmMinutes.addEventListener('blur', ()=> {
     let regex = /^([0-9]){0,2}$/;
-    if(regex.test(alarmMinutes.value) && alarmMinutes.value<60) {
+    if(alarmMinutes.value == "00"){
+        alarmMinutes.classList.remove('is-invalid');
+        alarmMinutes.classList.add('is-valid');
+        checkMinutes = true;
+    }
+    else if((regex.test(alarmMinutes.value) && alarmMinutes.value<60) && alarmMinutes.value != "") {
         alarmMinutes.classList.remove('is-invalid');
         alarmMinutes.classList.add('is-valid');
         checkMinutes = true;
     }
     else {
+        checkMinutes = false;
         alarmMinutes.classList.add('is-invalid');
-        setTimeout(()=> alarmMinutes.classList.remove('is-invalid'),3000);
     }
 });
 
-let checkSeconds = false;
-let alarmSeconds = document.querySelector('#alarmSeconds');
-alarmSeconds.addEventListener('blur', ()=> {
-    let regex = /^([0-9]){0,2}$/;
-    if(regex.test(alarmSeconds.value) && alarmSeconds.value<24) {
-        alarmSeconds.classList.remove('is-invalid');
-        alarmSeconds.classList.add('is-valid');
-        checkSeconds = true;
+
+document.querySelector('.setAlarm').style.display = "none";
+document.querySelector('.alarm').addEventListener('click', ()=> {
+    document.querySelector('.setAlarm').style.display = "inline";
+    document.querySelector('.alarmMessage').innerHTML = "";
+    alarmHours.value = "";
+    alarmMinutes.value = "";
+});
+
+let checkAlarm = false;
+document.querySelector('#setBtn').addEventListener('click', ()=> {
+    if(checkHours && checkMinutes) {
+        let alarms = `Alarm ${alarmHours.value} : ${alarmMinutes.value} <br />`;
+        document.querySelector('.alarmMessage').innerHTML += alarms;
+        alarmHours.classList.remove('is-valid');
+        alarmMinutes.classList.remove('is-valid');
+        
+        setInterval(()=> {
+            let date = new Date();
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            // console.log(hours, minutes);
+            // console.log(alarmHours.value, alarmMinutes.value);  
+            if(hours == alarmHours.value && minutes == alarmMinutes.value) checkAlarm = true;
+        }, 1000);
+        
+        document.querySelector('.setAlarm').style.display = "none";
     }
     else {
-        alarmSeconds.classList.add('is-invalid');
-        setTimeout(()=> alarmSeconds.classList.remove('is-invalid'),3000);
+        document.querySelector('.warningMessage').innerHTML = `
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        Please enter a valid time!!!
+        </div>`;
+        setTimeout(()=> document.querySelector('.warningMessage').innerHTML = "", 3500);
     }
 });
 
-
-document.querySelector('#setBtn').addEventListener('click', ()=> {
-    if(checkHours && checkMinutes && checkSeconds) {
-        
+let turnOff = document.querySelector('.turnOff');
+turnOff.style.display = 'none';
+setInterval(()=> {
+    if(checkAlarm) {
+        turnOff.style.display = 'inline';
+        document.querySelector('#alarmAudio').play();
     }
+}, 1000);
 
-    console.log(`${alarmHours.value} : ${alarmMinutes.value} : ${alarmSeconds.value}`);
-    alarmHours.value = alarmMinutes.value = alarmSeconds.value = "";
-    document.querySelector('.setAlarm').style.display = "none";
+turnOff.addEventListener('click', ()=> {
+    document.querySelector('.alarmMessage').innerHTML = "";
+    alarmHours.value = "";
+    alarmMinutes.value = "";
+    turnOff.style.display = 'none';
+    document.querySelector('#alarmAudio').pause();
+    checkAlarm = false;
 });
