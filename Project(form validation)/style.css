@@ -11,3 +11,19 @@
 .info_display  ul li {
     list-style-type: none;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.btn {
+    width: 200px;
+}

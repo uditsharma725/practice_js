@@ -6,7 +6,7 @@ const phone = document.querySelector('.number');
 const car = document.querySelector('.car');
 
 //'blur'meaning-> select and click outside
-let check_username; let check_email; let check_phone;
+let check_username=false; let check_email=false; let check_phone=false;
 username.addEventListener('blur', ()=> {
     let regex = /^[a-zA-Z]([0-9a-zA-Z]){3,20}$/;      
     let str = username.value;
@@ -62,7 +62,6 @@ phone.addEventListener('blur', ()=> {
 
 
 document.querySelector('.submit').addEventListener('click', ()=> {
-
     let message = document.querySelector('.successmessage');
     if(check_email && check_phone && check_username){
         message.innerHTML = `
@@ -91,8 +90,46 @@ document.querySelector('.submit').addEventListener('click', ()=> {
                 <strong>Error!</strong> All feilds must be filled correctly
             </div>
         </div>`;
+
+        if(check_username == false) {
+            username.classList.add('is-invalid');
+            document.querySelector('#list_name').innerHTML = `
+            <li>Your username should not start with a number</li>
+            <li>Your username must be 4 to 10 character long</li>
+            <li>Your username should not contain any special characters or spaces`;
+        } setTimeout(()=> username.classList.remove('is-invalid'),3500)
+
+        if(check_email == false) {
+            email.classList.add('is-invalid');
+            document.querySelector('#list_email').innerHTML = `
+            <li>Please add an valid email</li>`;
+        } setTimeout(()=> email.classList.remove('is-invalid'), 3500);
+
+        if(check_phone == false) {
+            phone.classList.add('is-invalid');
+            document.querySelector('#list_phone').innerHTML = `
+            <li>Your phone number should be 10-digits long</li>
+            <li>Your number should not contain any aplhabets or symbols</li>`; 
+        } setTimeout(()=> phone.classList.remove('is-invalid'), 3500);
+
         setTimeout(()=>{
             message.innerHTML = "";
-        }, 2500);
+        }, 3900);
     }
+});
+
+document.querySelector('.clear').addEventListener('click', ()=> {
+    username.value = "";
+    username.classList.remove('is-valid');
+    username.classList.remove('is-invalid');
+
+    email.value = "";
+    email.classList.remove('is-invalid');
+    email.classList.remove('is-invalid');
+
+    phone.value = "";
+    phone.classList.remove('is-invalid');
+    phone.classList.remove('is-invalid');
+
+    document.querySelector('.successmessage').innerHTML = "";
 });
