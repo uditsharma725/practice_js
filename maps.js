@@ -36,3 +36,18 @@ myMap.forEach((value,key)=> {
     console.log('key is - ', key);
     console.log('value is', value);
 });
+
+//converting map to array:
+console.log("");
+let myArr = Array.from(myMap);
+console.log(myArr);
+
+//converting map keys to array:
+console.log("");
+let myArrKeys = Array.from(myMap.keys());
+console.log(myArrKeys);
+
+//converting map values to array:
+console.log("");
+let myArrValues = Array.from(myMap.values());
+console.log(myArrValues);
