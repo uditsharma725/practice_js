@@ -9,7 +9,7 @@ imgBox.addEventListener('dragstart', (e)=> {
     e.target.className += ' hold';                  //space before hold to seperate classes
     setTimeout(()=> {
         e.target.className = ' hide';    
-    }, 0);                      //'0'-> means it would execute at the end 
+    }, 0);                          //'0'-> means it would execute at the end 
 });
 
 //drag stop on image box:
