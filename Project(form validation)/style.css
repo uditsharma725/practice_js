@@ -20,10 +20,33 @@
 
 .buttons {
     display: flex;
+    flex-wrap: wrap;
     flex-direction: row;
     justify-content: space-between;
 }
 
 .btn {
     width: 200px;
+}
+
+.inline {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+@media only screen and (max-width: 450px) {
+    .buttons {
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media only screen and (max-width: 775px) {
+    .inline {
+        display: block;
+    }
 }
